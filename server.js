@@ -82,9 +82,14 @@ app.use(passport.session());
 // ✅ Routes
 const userRoutes = require("./src/routes/userRoutes");
 app.use("/api", userRoutes);
+const orderRoutes = require("./src/routes/orderRoutes");
+app.use("/api", orderRoutes);
 
 const authRoutes = require("./src/routes/authRoutes");
 app.use("/auth", authRoutes);
+
+const stripeRoutes = require("./src/routes/checkoutRoutes");
+app.use("/api", stripeRoutes);
 
 // ✅ Health check
 app.get("/api/health", (req, res) => {
