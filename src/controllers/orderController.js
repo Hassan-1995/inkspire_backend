@@ -18,6 +18,7 @@ exports.createOrder = async (req, res) => {
     userID,
   }));
 
+  
   const keys = Object.keys(safeItems[0]);
   const values = safeItems.map((item) => keys.map((key) => item[key]));
 
